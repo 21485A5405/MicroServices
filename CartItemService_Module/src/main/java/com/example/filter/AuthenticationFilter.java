@@ -26,6 +26,9 @@ public class AuthenticationFilter extends OncePerRequestFilter {
     	this.currentUser = currentUser;
     }
 
+    public AuthenticationFilter() {
+    	
+    }
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
