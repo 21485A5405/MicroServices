@@ -18,7 +18,7 @@ import com.example.model.Product;
 import com.example.service.ProductService;
 
 @RestController
-@RequestMapping("/products")
+@RequestMapping("/product")
 public class ProductController {
 
 	

@@ -17,11 +17,6 @@ public class RegisterUser {
 	private String userEmail;
 	private String userPassword;
 	
-	@NotNull(message = " Shipping Address Cannot Be Null")
-	private List<@Valid @NotNull Address> shippingAddress;
-	@NotNull(message = " payment Details Cannot Be Null")
-	private List<@Valid @NotNull PaymentInfo> paymentDetails;
-	
 	public String getUserName() {
 		return userName;
 	}
@@ -40,17 +35,6 @@ public class RegisterUser {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public List<Address> getShippingAddress() {
-		return shippingAddress;
-	}
-	public void setShippingAddress(List<Address> shippingAddress) {
-		this.shippingAddress = shippingAddress;
-	}
-	public List<PaymentInfo> getPaymentDetails() {
-		return paymentDetails;
-	}
-	public void setPaymentDetails(List<PaymentInfo> paymentDetails) {
-		this.paymentDetails = paymentDetails;
-	}
+
 
 }

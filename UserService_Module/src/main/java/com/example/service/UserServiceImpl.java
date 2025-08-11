@@ -51,24 +51,13 @@ public class UserServiceImpl implements UserService{
 			throw new CustomException("User Already Exists Please Login");
 		}
 		User newUser = new User();
-		for (Address address : user.getShippingAddress()) {
-	        address.setUser(newUser);
-	    }
-		newUser.setShippingAddress(user.getShippingAddress());
-		if (user.getPaymentDetails() != null) {
-		    newUser.setPaymentDetails(user.getPaymentDetails());
-		}else {
-			throw new UnAuthorizedException("Payment Cannot be Null");
-		}
+		
 		if(user.getUserName().isBlank()) {
 			throw new CustomException("UserName Cannot be Empty");
 		}else if(user.getUserEmail().isBlank()) {
 			throw new CustomException("UserEmail Cannot be Empty");
 		}else if(user.getUserPassword().isBlank() || user.getUserPassword().length()<=5) {
 			throw new CustomException("UserPassword Cannot be Empty / less Than % Characters");
-		}else if(user.getShippingAddress() == null) {
-			throw new CustomException("ShippingAddress Cannot be Empty");
-			
 		}
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			String hashedPassword = encoder.encode(user.getUserPassword());
